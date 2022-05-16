@@ -40,7 +40,6 @@ export class ProductComponent implements OnInit {
     this._productService.getAllProduct().subscribe(res =>
       {
         this._data = res.hero
-        console.log(this._data);
       }
     )
   }
