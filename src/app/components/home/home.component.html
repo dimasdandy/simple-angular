@@ -1,0 +1,30 @@
+<p>home works!</p>
+<button mat-flat-button color="primary" (click)="onRoute()">Sign Out</button><br><br>
+<button routerLink="/signin">LOG OUT</button><br><br>
+<label>{{_username}}</label>
+
+<br><br>
+<ul>
+    <li>
+        <a routerLink="/product">Product</a>
+    </li>
+</ul>
+
+<br><br>
+<h5>test custome pipe</h5>
+<input type="number" [(ngModel)]="_num">
+<p>{{_num | customepipe}}</p>
+
+<br><br>
+<table>
+    <tr>
+        <th *ngFor="let header of _headers">
+            {{header}}
+        </th>
+    </tr>
+    <tr *ngFor="let list of _listValue">
+        <td>{{list.first_name}}</td>
+        <td>{{list.last_name}}</td>
+        <td>{{list.isOnline}}</td>
+    </tr>
+</table>

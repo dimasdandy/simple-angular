@@ -1,0 +1,26 @@
+<section class="SectionSignIn">
+    <header>
+        <label>BRINESIA</label>
+        <span>Divisi TSI</span>
+    </header>
+    <form class="FormSignIn">
+        <h3>Sign In</h3>
+        <div class="DivSignIn">
+            <label for="username">Username</label>
+            <input type="text" id="username" [(ngModel)]="_modelUser.Username" name="username">
+        </div>
+        <div class="DivSignIn">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="_modelUser.Password" name="password">
+        </div>
+    </form>
+    <div class="DivInputButtonSignIn">
+        <input type="button" id="buttonSignIn" value="Sign In" (click)="onClick()">
+    </div>
+    <footer>
+        <p style="text-align: center;">Username tidak terdaftar?
+            <a routerLink=""> Hubungi kami.</a>
+        </p>
+        <p style="text-align: center;">Versionn 1.0.0</p>
+    </footer>
+</section>

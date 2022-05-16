@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+$font-size-1em: 1em
+$font-size-5em: 5em
+
+@mixin card-shadow
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px rgb(0 0 0 / 10%)
+
+body, footer
+    margin: 0
+    padding: 0
+
+body
+    height: 100vh
+    background-image: url("https://i.ytimg.com/vi/oRQ-Vz25AOE/maxresdefault.jpg")
+    background-size: 100%
+    background-repeat: no-repeat
+
+form
+    @include card-shadow
+    background-color: #FFF
+
+footer
+    font-family: Helvetica
+    p
+        font-size: $font-size-1em
+        color: #fff
+    a
+        color: #fff
+
+section.SectionSignIn
+    width: 360px
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin: auto
+    header
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 50px
+        label
+            font-size: $font-size-5em
+            font-size: 4em !important
+            font-family: Roboto
+            letter-spacing: 10px !important
+            margin-bottom: 30px !important
+            text-align: center
+            color: #fff
+            font-weight: 500
+        span
+            font-size: 1.2em
+            font-weight: 400
+            color: #fff
+
+form.FormSignIn
+    width: auto
+    height: auto
+    display: flex
+    flex-direction: column
+    margin-bottom: 15px
+    padding: 20px
+    border-radius: 18px
+    h3
+        color: #f26f21
+        font-size: 1.5em
+        font-weight: bold
+        margin-bottom: 10px
+
+div.DivSignIn
+    display: flex
+    flex-direction: column
+    margin-top: 10px
+    label
+        font-size: 1.175em
+        color: #787878
+        margin-bottom: 10px
+    input[type=text], input[type=password]
+        width: 316px
+        height: 30px
+        padding: 5px 10px
+        border-radius: 24px
+        font-size: 1,2em
+        background-color: #e6e6e6
+        color: #787878
+        border: none
+
+div.DivInputButtonSignIn
+    width: auto
+    height: auto
+    padding: 20px
+    cursor:pointer
+    input[type=button]
+        height: 42px
+        width: 370px
+        text-align: center
+        font-size: 1.2em
+        border-radius: 18px
+        border: none
+        padding: 1px 6px
+        background-color: #F7931E
+        color: #FFF
