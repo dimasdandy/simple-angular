@@ -41,8 +41,8 @@ header.HeaderNavBar
             text-align: center
             border-radius: 20px
             a
-               text-decoration: none
-               color:rgb(224, 168, 96)
+                text-decoration: none
+                color: rgb(224, 168, 96)
 
 section.SectionSignIn
     width: 360px
@@ -92,6 +92,47 @@ section.SectionFormCreateUser
             text-align: center
             color: #fff
             font-weight: 500
+
+section.SectionListUser
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100vh
+    margin: auto
+    header
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 50px
+        label
+            font-size: $font-size-5em
+            font-size: 4em !important
+            letter-spacing: 10px !important
+            margin-bottom: 30px !important
+            text-align: center
+            color: #fff
+            font-weight: 500
+    table
+        height: auto
+        width: 70%
+        background-color: rgb(255, 255, 255)
+        border-radius: 10px
+        padding: 15px
+        overflow-x: auto
+        overflow-y: scroll
+        tr
+            margin-bottom: 50px
+            &:hover
+                 background-color: #ddd
+            td, th
+                border: 1px solid #ddd
+                padding: 8px
+            th
+                text-align: left
+                background-color: rgb(224, 168, 96)
+                color: white
 
 form.FormSignIn, form.FormCreateUser
     width: auto
@@ -175,7 +216,7 @@ div.DivInputButtonFormSubmit
     width: auto
     height: auto
     padding: 20px
-    cursor:pointer
+    cursor: pointer
     input[type=button]
         height: 42px
         width: 436px

@@ -69,12 +69,13 @@ export class SigninComponent implements OnInit {
             {
                 success(modelResponse: ResponseModel): void
                 {
+                    modelResponse.MessageContent = modelResponseValidationEmail.MessageContent;
                     if(modelResponse.HTTPResponseCode === "200")
                     {
                         if(modelResponse.Data !== undefined)
                         {
                             componentCurrent._modelToken = JSON.parse(modelResponse.Data)
-                            alert(JSON.stringify(componentCurrent._modelToken));
+                            alert(modelResponse.MessageContent);
                             componentCurrent.route.navigate(["home/" + componentCurrent._modelUserLogin.email]);
                         }
                     }
@@ -82,10 +83,10 @@ export class SigninComponent implements OnInit {
                 },
                 fail(modelResponse: ResponseModel): void
                 {
-                    if(modelResponse.HTTPResponseCode == "400" || modelResponse.HTTPResponseCode == "401")
+                    modelResponse.MessageContent = modelResponseValidationEmail.MessageContent;
+                    if(modelResponse.MessageContent)
                     {
-                        componentCurrent._modelToken = JSON.parse(modelResponse.Data!);
-                        alert("Whoopss something bad happens!");
+                        alert(modelResponse.MessageContent);
                         componentCurrent.route.navigate(["signin"]);
                     }
                 },
@@ -93,7 +94,6 @@ export class SigninComponent implements OnInit {
                 {
                     if(modelResponse.HTTPResponseCode === "400" || modelResponse.HTTPResponseCode === "401")
                     {
-                        componentCurrent._modelToken = JSON.parse(modelResponse.Data!);
                         alert("Whoopss something bad happens!");
                         componentCurrent.route.navigate(["signin"]);
                     }

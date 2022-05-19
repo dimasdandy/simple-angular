@@ -31,7 +31,7 @@ export class UserLoginModel
         }
         else if (regularExpression.test(this.email))
         {
-            modelResponse.MessageContent = "Email format wrong";
+            modelResponse.MessageContent = "Login Success";
             modelResponse.State = "Success";
         }
         else
@@ -49,10 +49,6 @@ export class UserLoginModel
         if (this.password == null || this.password === undefined || this.password == "")
         {
             modelResponse.MessageContent = "Password can't be empty";
-        }
-        else
-        {
-            modelResponse.MessageContent = "Enter a valid password";
         }
 
         return modelResponse;

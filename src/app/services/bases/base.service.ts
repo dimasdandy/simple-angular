@@ -74,8 +74,6 @@ export class BaseService
             modelResponse.MessageTitle = error.message;
             modelResponse.HTTPResponseCode = error.error;
             modelResponse.Data = JSON.stringify(error.error);
-            // alert(JSON.stringify(modelResponse));
-            alert("Whoopss something bad happens!");
             interfaceGeneralService.fail(modelResponse);
           }
         )
@@ -106,7 +104,6 @@ export class BaseService
               modelResponse.MessageTitle = modelHttpResponse.statusText;
               modelResponse.HTTPResponseCode = modelHttpResponse.status.toString();
               modelResponse.Data = JSON.stringify(modelHttpResponse.body);
-              // alert(JSON.stringify(modelResponse));
               interfaceGeneralService.success(modelResponse);
             }
             else
@@ -114,13 +111,12 @@ export class BaseService
               interfaceGeneralService.signout;
             }
           },
-          (error: {error: any; message: string;}) => {
+          error => {
             const modelResponse: ResponseModel = new ResponseModel();
-            modelResponse.MessageTitle = error.message;
-            modelResponse.HTTPResponseCode = error.error;
-            modelResponse.Data = JSON.stringify(error.error);
-            // alert(JSON.stringify(modelResponse));
-            alert("Whoopss something bad happens!");
+            modelResponse.MessageTitle = error.statusText;
+            modelResponse.HTTPResponseCode = error.status.toString;
+            modelResponse.Data = JSON.stringify(error.body);
+            // alert("Error fail")
             interfaceGeneralService.fail(modelResponse);
           }
         )
