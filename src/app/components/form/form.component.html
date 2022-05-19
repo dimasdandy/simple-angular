@@ -1,0 +1,19 @@
+<section class="SectionFormCreateUser">
+    <header>
+        <label>CREATE</label>
+        <label>USER</label>
+    </header>
+    <form class="FormCreateUser">
+        <div class="DivFormCreateUser">
+            <label for="nameName">Name</label>
+            <input type="text" id="nameName" [(ngModel)]="_modelCreateUser.name" name="modelUserEmail">
+        </div>
+        <div class="DivFormCreateUser">
+            <label for="jobJob">Job</label>
+            <input type="text" id="jobJob" [(ngModel)]="_modelCreateUser.job" name="modelUserPassword">
+        </div>
+    </form>
+    <div class="DivInputButtonFormSubmit">
+        <input type="button" id="buttonSignIn" value="Submit" (click)="onClick(this)">
+    </div>
+</section>

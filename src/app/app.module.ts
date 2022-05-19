@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { CustompipeModule } from './functions/pipes/custompipe.pipe.module';
 import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListuserComponent } from './components/listuser/listuser.component';
+import { CurrencyComponent } from './components/currency/currency.component';
+import { FormComponent } from './components/form/form.component';
 
 //#endregion
 
@@ -25,7 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SigninComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    ListuserComponent,
+    CurrencyComponent,
+    FormComponent
   ],
   imports:
   [

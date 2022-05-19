@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserModel } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 //#endregion
 
@@ -23,14 +23,14 @@ import { UserModel } from 'src/app/models/user.model';
 export class HomeComponent implements OnInit {
 
   _username = this.activeRoute.snapshot.params['username'];
-  _num: number = 0;
-  _headers =
+  _numberNum: number = 0;
+  _arrayHeaders =
   [
     "First Name",
     "Last Name",
     "isOnline"
   ]
-  _listValue =
+  _arrayListValue =
   [
     {
       "first_name": "Sammy",
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 
   //#region CONSTRUCTOR
 
-  constructor(private route: Router,private activeRoute:ActivatedRoute) { }
+  constructor(private route: Router, private activeRoute: ActivatedRoute, private _userService: UserService) { }
 
   //#endregion
 

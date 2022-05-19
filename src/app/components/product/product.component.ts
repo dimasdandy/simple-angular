@@ -2,7 +2,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ListProductModel } from 'src/app/models/listproduct.model';
-import { ProductModel } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 //#endregion
@@ -24,7 +23,7 @@ import { ProductService } from 'src/app/services/product.service';
 
 export class ProductComponent implements OnInit {
 
-  _data?: ListProductModel[]= [];
+  _arrayData?: Array<ListProductModel>;
 
   //#region CONTRUCTOR
 
@@ -39,7 +38,7 @@ export class ProductComponent implements OnInit {
   {
     this._productService.getAllProduct().subscribe(res =>
       {
-        this._data = res.hero
+        this._arrayData = res.hero
       }
     )
   }

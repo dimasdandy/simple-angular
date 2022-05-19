@@ -1,10 +1,10 @@
 <p>product works!</p>
-<table>
+<table style="border: solid; background-color: #FFF;">
     <tr>
         <th>Hero</th>
         <th>Role</th>
     </tr>
-    <tr *ngFor="let list of _data; let i=index">
+    <tr *ngFor="let list of _arrayData; let i=index">
         <td *ngIf="i<10">{{list.hero_name}}</td>
         <td *ngIf="i<10">{{list.hero_role}}</td>
     </tr>

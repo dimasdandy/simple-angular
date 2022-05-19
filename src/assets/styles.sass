@@ -1,0 +1,188 @@
+@import initialization
+
+@mixin card-shadow
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px rgb(0 0 0 / 10%)
+
+body, footer
+    margin: 0
+    padding: 0
+    font-family: $font-family-roboto
+
+body
+    height: 100vh
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/907/544/non_2x/flat-design-background-with-abstract-pattern-free-vector.jpg")
+    background-size: 100%
+    background-repeat: no-repeat
+
+form
+    @include card-shadow
+    background-color: #FFF
+
+footer
+    p
+        font-size: $font-size-1em
+        color: #fff
+    a
+        color: #fff
+
+header.HeaderNavBar
+    position: relative
+    margin-top: 10pxy
+    ul
+        display: flex
+        justify-content: space-around
+        list-style-type: none
+        padding: 20px
+        li
+            height: auto
+            width: 100px
+            padding: 10px
+            background-color: #FFF
+            text-align: center
+            border-radius: 20px
+            a
+               text-decoration: none
+               color:rgb(224, 168, 96)
+
+section.SectionSignIn
+    width: 360px
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin: auto
+    header
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 50px
+        label
+            font-size: $font-size-5em
+            font-size: 4em !important
+            letter-spacing: 10px !important
+            margin-bottom: 30px !important
+            text-align: center
+            color: #fff
+            font-weight: 500
+        span
+            font-size: 1.2em
+            font-weight: 400
+            color: #fff
+
+section.SectionFormCreateUser
+    width: 360px
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin: auto
+    header
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        label
+            font-size: $font-size-5em
+            font-size: 4em !important
+            letter-spacing: 10px !important
+            margin-bottom: 50px !important
+            text-align: center
+            color: #fff
+            font-weight: 500
+
+form.FormSignIn, form.FormCreateUser
+    width: auto
+    height: auto
+    display: flex
+    flex-direction: column
+    margin-bottom: 15px
+    padding: 20px
+    border-radius: 18px
+    h3
+        color: #f26f21
+        font-size: 1.5em
+        font-weight: bold
+        margin-bottom: 10px
+
+div.DivSignIn
+    display: flex
+    flex-direction: column
+    padding: 10px
+    label
+        font-size: 1.175em
+        color: #787878
+        margin-bottom: 10px
+    input[type=text], input[type=password]
+        width: 316px
+        height: 30px
+        padding: 5px 10px
+        border-radius: 24px
+        font-size: 1,2em
+        background-color: #e6e6e6
+        color: #787878
+        border: none
+    input[type=button]
+        height: 30px
+        border-radius: 24px
+        border: none
+        background-color: #f2d365
+        font-size: $font-size-1em
+        font-weight: 700
+        color: #FFF
+
+div.DivFormCreateUser
+    display: flex
+    margin-top: 10px
+    label
+        width: 40px
+        font-size: 1.175em
+        color: #787878
+        margin-bottom: 10px
+        margin-right: 20px
+    input[type=text]
+        width: 316px
+        height: 30px
+        padding: 5px 10px
+        border-radius: 24px
+        font-size: 1,2em
+        background-color: #e6e6e6
+        color: #787878
+        border: none
+
+div.DivFormCurrency
+    display: flex
+    flex-direction: column
+    margin-top: 10px
+    label
+        width: 40px
+        font-size: 1.175em
+        color: #787878
+    input[type=text], input[type=button]
+        width: 316px
+        height: 30px
+        padding: 5px 10px
+        border-radius: 24px
+        font-size: 1,2em
+        background-color: #e6e6e6
+        color: #787878
+        border: none
+        margin-bottom: 20px
+
+div.DivInputButtonFormSubmit
+    width: auto
+    height: auto
+    padding: 20px
+    cursor:pointer
+    input[type=button]
+        height: 42px
+        width: 436px
+        text-align: center
+        font-size: 1.2em
+        border-radius: 18px
+        border: none
+        padding: 1px 6px
+        background-color: #F7931E
+        color: #FFF
