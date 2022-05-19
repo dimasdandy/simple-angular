@@ -1,8 +1,23 @@
+//#region IMPORT
+
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'customepipe'
-})
+//#endregion
+
+
+//#region PIPE
+@Pipe
+(
+    {
+        name: 'customepipe'
+    }
+)
+
+//#endregion
+
+
+//#region CLASS
+
 export class CustomepipePipe implements PipeTransform {
 
   transform(value: number)
@@ -11,3 +26,5 @@ export class CustomepipePipe implements PipeTransform {
   }
 
 }
+
+//#endregion

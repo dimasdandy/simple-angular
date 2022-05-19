@@ -3,6 +3,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomepipePipe } from './customepipe.pipe';
+import { CustomcurrencyPipe } from './customcurrency.pipe';
 
 //#endregion
 
@@ -14,7 +15,8 @@ import { CustomepipePipe } from './customepipe.pipe';
   {
   declarations:
   [
-    CustomepipePipe
+    CustomepipePipe,
+    CustomcurrencyPipe
   ],
   imports:
   [
@@ -22,7 +24,8 @@ import { CustomepipePipe } from './customepipe.pipe';
   ],
   exports:
   [
-    CustomepipePipe
+    CustomepipePipe,
+    CustomcurrencyPipe
   ]
   }
 )
