@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomcurrencyPipe } from 'src/app/functions/pipes/customcurrency.pipe';
 
 @Component({
   selector: 'app-currency',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrencyComponent implements OnInit {
 
-  public _numberNum?: number;
+  public _numberNum: number = 0;
 
   constructor() { }
 

@@ -31,6 +31,8 @@ export class SigninComponent implements OnInit {
 
     public _modelUserLogin: UserLoginModel = new UserLoginModel();
     public _modelToken: TokenModel = new TokenModel();
+    public _booleanIsLoading: boolean = false;
+    private _elementHTMLImgLoadingCircle: HTMLElement | null;
 
     //#endregion
 
@@ -39,7 +41,7 @@ export class SigninComponent implements OnInit {
 
     constructor(private route: Router, private _userService: UserService)
     {
-
+        this._elementHTMLImgLoadingCircle = document.getElementById("imageLoadingCircle");
     }
 
     //#endregion
@@ -62,7 +64,6 @@ export class SigninComponent implements OnInit {
         modelUserLogin.email = this._modelUserLogin.email;
         modelUserLogin.password = this._modelUserLogin.password;
         const modelResponseValidationEmail: ResponseModel = modelUserLogin.validateEmail();
-        const modelResponseValidationPassword: ResponseModel = modelUserLogin.validatePassword();
 
         this._userService.postLogin
         (
@@ -86,8 +87,9 @@ export class SigninComponent implements OnInit {
                     modelResponse.MessageContent = modelResponseValidationEmail.MessageContent;
                     if(modelResponse.MessageContent)
                     {
-                        alert(modelResponse.MessageContent);
+                        alert("user not found");
                         componentCurrent.route.navigate(["signin"]);
+                        componentCurrent._booleanIsLoading = false;
                     }
                 },
                 signout(modelResponse: ResponseModel): void
@@ -101,6 +103,18 @@ export class SigninComponent implements OnInit {
             },
             this._modelUserLogin
         )
+    }
+
+    //#endregion
+
+
+    //#region SHOWLOADING
+
+    showLoading(): void
+    {
+        setTimeout(() => {
+            this._booleanIsLoading = true;
+        }, 500);
     }
 
     //#endregion

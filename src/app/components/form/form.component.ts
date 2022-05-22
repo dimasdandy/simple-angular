@@ -68,7 +68,9 @@ export class FormComponent implements OnInit
                         {
                             componentCurrent._modelCreateUser = JSON.parse(modelResponse.Data)
                             alert(JSON.stringify(componentCurrent._modelCreateUser));
-                            componentCurrent.route.navigate(["home/" + componentCurrent._modelUserLogin.email]);
+                            componentCurrent._modelCreateUser.name = "";
+                            componentCurrent._modelCreateUser.job = "";
+                            // componentCurrent.route.navigate(["home/" + componentCurrent._modelUserLogin.email]);
                         }
                     }
 

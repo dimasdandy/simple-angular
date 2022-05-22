@@ -10,9 +10,12 @@ import { ResponseModel } from 'src/app/models/response.model';
 
 //#region INJECTABLE
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable
+(
+  {
+    providedIn: 'root'
+  }
+)
 
 //#endregion
 
@@ -42,7 +45,8 @@ export class BaseService
 
   protected callServiceGet(interfaceGeneralService: GeneralServiceInterface, stringUrl: string): void
   {
-    try {
+    try
+    {
       this.http.get<HttpResponse<any>>(stringUrl,
           {
             headers:
@@ -77,14 +81,17 @@ export class BaseService
             interfaceGeneralService.fail(modelResponse);
           }
         )
-    } catch (error) {
+    }
+    catch (error)
+    {
       alert("Whoopsss something bad happens!");
     }
   }
 
   protected callServicePost(interfaceGeneralService: GeneralServiceInterface, stringUrl: string, stringData: string): void
   {
-    try {
+    try
+    {
       this.http.post<HttpResponse<any>>(stringUrl, stringData,
           {
             headers:
@@ -116,11 +123,12 @@ export class BaseService
             modelResponse.MessageTitle = error.statusText;
             modelResponse.HTTPResponseCode = error.status.toString;
             modelResponse.Data = JSON.stringify(error.body);
-            // alert("Error fail")
             interfaceGeneralService.fail(modelResponse);
           }
         )
-    } catch (error) {
+    }
+    catch (error)
+    {
       alert("Whoopsss something bad happens!");
     }
   }

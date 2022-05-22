@@ -32,8 +32,6 @@ export class CustomcurrencyPipe implements PipeTransform {
     ): string
 
     {
-        value *= 1;
-
         let result = '\\d(?=(\\d{' + chunkLength + '})+' + (decimalLength > 0 ? '\\D' : '$') +')';
         let num = value.toFixed(Math.max(0, ~~decimalLength));
 
@@ -43,7 +41,7 @@ export class CustomcurrencyPipe implements PipeTransform {
                 decimalDelimiter ? num.replace('.', decimalDelimiter) : num).replace(
                 new RegExp(result, 'g'),
                 '$&' + chunkDelimiter
-            )
+            ) 
         );
     }
 }

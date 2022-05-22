@@ -1,0 +1,41 @@
+@keyframes anim
+    from
+        stroke-dasharray: 0 70%
+    to
+        stroke-dasharray: 50% 0
+        stroke-dashoffset: 10%
+
+svg
+    position: relative
+    width: 100%
+    text
+        font-size: 5rem
+        stroke: #FFF
+        stroke-width: 3px
+        fill: transparent
+        animation: anim 3s infinite alternate
+
+@keyframes animationSpin
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)
+
+div#divLoadingMessage, img#imageLoadingCircle
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+div#divLoadingMessage
+    width: 100%
+    height: 100%
+    img#imageLoadingCircle
+        width: 80px
+        height: 80px
+        background-color: none
+        animation: animationSpin 3s infinite
+
+// img#imageLoadingCircle
+// +useAnimation(animationSpin, 1, 0, infinite)
+// +setAnimationTimingFunction(linear)
+

@@ -25,7 +25,8 @@ import { UserService } from 'src/app/services/user.service';
 export class ListuserComponent implements OnInit
 {
 
-  public _arrayListUser?: Array<DataUserModel> = Array<DataUserModel>();
+  public _modelListUser?: ListUsersModel = new ListUsersModel();
+  public _arrayDataUser?: Array<DataUserModel> = new Array<DataUserModel>();
 
   //#region COSTRUCTOR
 
@@ -46,9 +47,10 @@ export class ListuserComponent implements OnInit
                 {
                     if(modelResponse.Data !== undefined)
                     {
-                      alert(JSON.stringify(modelResponse));
-                      componentCurrent._arrayListUser = JSON.parse(modelResponse.Data);
-                      console.log(componentCurrent._arrayListUser);
+                      alert(JSON.stringify(modelResponse.Data));
+                      componentCurrent._modelListUser = JSON.parse(modelResponse.Data);
+                      componentCurrent._arrayDataUser = componentCurrent._modelListUser?.data
+                      console.log(componentCurrent._arrayDataUser);
                     }
                 }
 

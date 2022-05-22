@@ -1,19 +1,19 @@
 <section class="SectionSignIn">
-    <header>
-        <label>LOGIN</label>
-    </header>
     <form class="FormSignIn">
-        <h3>Sign In</h3>
+        <label>LOGIN</label>
         <div class="DivSignIn">
-            <label for="username">Username</label>
-            <input type="text" id="username" [(ngModel)]="_modelUserLogin.email" name="username">
+            <input type="text" id="emailEmail" [(ngModel)]="_modelUserLogin.email" name="email" placeholder="Email">
         </div>
         <div class="DivSignIn">
-            <label for="password">Password</label>
-            <input type="password" id="password" [(ngModel)]="_modelUserLogin.password" name="password">
+            <input type="password" id="passwordPassword" [(ngModel)]="_modelUserLogin.password" name="password" placeholder="Password">
         </div>
         <div class="DivSignIn">
-            <input type="button" id="buttonSignIn" value="Sign In" (click)="onClick(this)">
+            <input type="button" id="buttonSignIn" value="Sign In" (click)="onClick(this)" (click)="showLoading()">
         </div>
     </form>
+    <section>
+        <div id="divLoadingMessage" *ngIf="_booleanIsLoading">
+            <img id="imageLoadingCircle" src="../../assets/icons/icon_loading.svg">
+        </div>
+    </section>
 </section>

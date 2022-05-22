@@ -6,15 +6,16 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { FormComponent } from './components/form/form.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
-import { ProductComponent } from './components/product/product.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { TokenComponent } from './components/token/token.component';
 
 //#endregion
 
 
 //#region ROUTES
 
-const routes: Routes = [
+const routes: Routes =
+[
   {
     path: "",
     redirectTo: "/",
@@ -33,10 +34,6 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "product",
-    component: ProductComponent
-  },
-  {
     path: "listuser",
     component: ListuserComponent
   },
@@ -47,6 +44,10 @@ const routes: Routes = [
   {
     path: "form",
     component: FormComponent
+  },
+  {
+    path: "token",
+    component: TokenComponent
   }
 ];
 
@@ -55,10 +56,13 @@ const routes: Routes = [
 
 //#region MODULE
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+@NgModule
+(
+  {
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  }
+)
 export class AppRoutingModule { }
 
 //#endregion

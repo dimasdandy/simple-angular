@@ -10,11 +10,12 @@ import { HomeComponent } from './components/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CustompipeModule } from './functions/pipes/custompipe.pipe.module';
-import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { FormComponent } from './components/form/form.component';
+import { TokenComponent } from './components/token/token.component';
+import { LoadingcircleComponent } from './components/loadingcircle/loadingcircle.component';
 
 //#endregion
 
@@ -28,10 +29,11 @@ import { FormComponent } from './components/form/form.component';
     AppComponent,
     SigninComponent,
     HomeComponent,
-    ProductComponent,
     ListuserComponent,
     CurrencyComponent,
-    FormComponent
+    FormComponent,
+    TokenComponent,
+    LoadingcircleComponent
   ],
   imports:
   [

@@ -1,11 +1,11 @@
-<section class="SectionFormCreateUser">
+<section class="SectionCurrency">
     <header>
         <label>CURRENCY</label>
     </header>
-    <form class="FormCreateUser">
+    <form class="FormCurrency">
         <div class="DivFormCurrency">
-            <input type="text" id="nameName" [(ngModel)]="_numberNum" name="modelUserEmail">
-            <label for="nameName">{{_numberNum | currency:'Rp.':'symbol':'3.0'}}</label>
+            <input type="number" id="nameName" [(ngModel)]="_numberNum" name="modelUserEmail">
+            <label for="nameName">{{_numberNum | customcurrency}}</label>
         </div>
     </form>
 </section>

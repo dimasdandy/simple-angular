@@ -4,43 +4,12 @@
     </header>
     <table>
         <tr>
+            <th>Full Name</th>
             <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
         </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
+        <tr *ngFor=" let data of _arrayDataUser">
+            <td>{{data.first_name}} {{data.last_name}}</td>
+            <td>{{data.email}}</td>
         </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
-        </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
-        </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
-        </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
-        </tr>
-        <tr>
-            <td>dim@gmail.com</td>
-            <td>dimas</td>
-            <td>dandy</td>
-        </tr>
-        <!-- <tr *ngFor=" let list of _arrayListUser; let i=index ">
-            <td *ngIf="i<10 ">{{list.id}}</td>
-            <td *ngIf="i<10 ">{{list.email}}</td>
-        </tr> -->
     </table>
 </section>
