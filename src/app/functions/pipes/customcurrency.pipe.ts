@@ -34,6 +34,7 @@ export class CustomcurrencyPipe implements PipeTransform {
         value = value.toFixed(Math.max(0, ~~0));
         const regexResult = value.replace('.', ',').replace(new RegExp('\\d(?=(\\d{3})+$)', 'g'),'$&' + '.');
         return regexResult;
+        //cmd
     }
 }
 
