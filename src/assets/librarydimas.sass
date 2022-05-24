@@ -1,0 +1,16 @@
+=generateKeyFrames($stringAnimationName)
+    @-webkit-keyframes #{$stringAnimationName}
+        @content
+    @-moz-keyframes #{$stringAnimationName}
+        @content
+    @-ms-keyframes #{$stringAnimationName}
+        @content
+    @keyframes #{$stringAnimationName}
+        @content
+
+=useAnimation($stringAnimationName, $intAnimationDuration, $intAnimationDelay, $intAnimationIteration)
+    @-ms-animation: $stringAnimationName #{$intAnimationDuration + "s"} #{$intAnimationDelay + "s"} $intAnimationIteration forwards
+    @-moz-animation: $stringAnimationName #{$intAnimationDuration + "s"} #{$intAnimationDelay + "s"} $intAnimationIteration forwards
+    @-o-animation: $stringAnimationName #{$intAnimationDuration + "s"} #{$intAnimationDelay + "s"} $intAnimationIteration forwards
+    @-webkit-animation: $stringAnimationName #{$intAnimationDuration + "s"} #{$intAnimationDelay + "s"} $intAnimationIteration forwards
+    @animation: $stringAnimationName #{$intAnimationDuration + "s"} #{$intAnimationDelay + "s"} $intAnimationIteration forwards

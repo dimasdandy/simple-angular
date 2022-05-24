@@ -39,7 +39,7 @@ export class FormComponent implements OnInit
 
     //#region CONSTRUCTOR
 
-    constructor(private _userService: UserService, private route: Router) { }
+    constructor(private _serviceUser: UserService, private route: Router) { }
 
     //#endregion
 
@@ -57,7 +57,7 @@ export class FormComponent implements OnInit
 
     onClick(componentCurrent: FormComponent): void
     {
-        this._userService.postCreateUser
+        this._serviceUser.postCreateUser
         (
             {
                 success(modelResponse: ResponseModel): void

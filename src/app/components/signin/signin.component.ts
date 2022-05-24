@@ -1,6 +1,6 @@
 //#region IMPORT
 
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ResponseModel } from 'src/app/models/response.model';
 import { TokenModel } from 'src/app/models/token.model';
@@ -39,7 +39,7 @@ export class SigninComponent implements OnInit {
 
     //#region CONSTRUCTOR
 
-    constructor(private route: Router, private _userService: UserService)
+    constructor(private route: Router, private _userService: UserService, private changeDetectorRef: ChangeDetectorRef)
     {
         this._elementHTMLImgLoadingCircle = document.getElementById("imageLoadingCircle");
     }
@@ -112,7 +112,8 @@ export class SigninComponent implements OnInit {
 
     showLoading(): void
     {
-        setTimeout(() => {
+        setTimeout(() =>
+        {
             this._booleanIsLoading = true;
         }, 500);
     }

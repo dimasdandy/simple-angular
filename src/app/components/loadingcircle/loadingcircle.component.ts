@@ -23,6 +23,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class LoadingcircleComponent implements OnInit {
 
+    //#region CLASS
+
+    public _booleanIsLoading: boolean = false;
+
+    //#endregion
+
+
     //#region CONTRUCTOR
 
     constructor()
@@ -38,6 +45,19 @@ export class LoadingcircleComponent implements OnInit {
     ngOnInit(): void
     {
 
+    }
+
+    //#endregion
+
+
+    //#region SHOWLOADING
+
+    showLoading(): void
+    {
+        setTimeout(() =>
+        {
+            this._booleanIsLoading = true;
+        }, 500);
     }
 
     //#endregion

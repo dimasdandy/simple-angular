@@ -2,18 +2,20 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
 
 //#endregion
 
 
 //#region COMPONENT
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
-})
+@Component
+(
+  {
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.sass']
+  }
+)
 
 //#endregion
 
@@ -46,7 +48,7 @@ export class HomeComponent implements OnInit {
 
   //#region CONSTRUCTOR
 
-  constructor(private route: Router, private activeRoute: ActivatedRoute, private _userService: UserService) { }
+  constructor(private route: Router, private activeRoute: ActivatedRoute) { }
 
   //#endregion
 

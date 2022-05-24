@@ -26,10 +26,15 @@ import { BaseService } from './bases/base.service';
 export class TokenService extends BaseService
 {
 
+  //#region CONSTRUCTOR
+
   constructor(http: HttpClient)
   {
     super(http);
   }
+
+  //#endregion
+
 
   postGenerateTokenDummy(interfaceGeneralService: GeneralServiceInterface): void
   {

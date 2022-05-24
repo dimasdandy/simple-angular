@@ -11,11 +11,14 @@ import { UserService } from 'src/app/services/user.service';
 
 //#region COMPONENT
 
-@Component({
-  selector: 'app-listuser',
-  templateUrl: './listuser.component.html',
-  styleUrls: ['./listuser.component.sass']
-})
+@Component
+(
+  {
+    selector: 'app-listuser',
+    templateUrl: './listuser.component.html',
+    styleUrls: ['./listuser.component.sass']
+  }
+)
 
 //#endregion
 
@@ -30,7 +33,7 @@ export class ListuserComponent implements OnInit
 
   //#region COSTRUCTOR
 
-  constructor(private _userService: UserService) { }
+  constructor(private _serviceUser: UserService) { }
 
   //#endregion
 
@@ -39,18 +42,18 @@ export class ListuserComponent implements OnInit
 
   callListUser(componentCurrent: ListuserComponent): void
   {
-    this._userService.getListDataUser
-        ({
+    this._serviceUser.getListDataUser
+        (
+          {
             success(modelResponse: ResponseModel): void
             {
                 if(modelResponse.HTTPResponseCode === "200")
                 {
                     if(modelResponse.Data !== undefined)
                     {
-                      alert(JSON.stringify(modelResponse.Data));
+                      // alert(JSON.stringify(modelResponse.Data));
                       componentCurrent._modelListUser = JSON.parse(modelResponse.Data);
                       componentCurrent._arrayDataUser = componentCurrent._modelListUser?.data
-                      console.log(componentCurrent._arrayDataUser);
                     }
                 }
 
@@ -69,7 +72,8 @@ export class ListuserComponent implements OnInit
                   alert()
                 }
             }
-        })
+          }
+        )
   }
 
   //#endregion

@@ -23,26 +23,17 @@ export class CustomcurrencyPipe implements PipeTransform {
 
     transform
     (
-        value: number,
-        currencySign: string = 'Rp. ',
-        decimalLength: number = 0,
-        chunkDelimiter: string = '.',
-        decimalDelimiter: string = ',',
-        chunkLength: number = 3
+        value: any,
     ): string
 
     {
-        let result = '\\d(?=(\\d{' + chunkLength + '})+' + (decimalLength > 0 ? '\\D' : '$') +')';
-        let num = value.toFixed(Math.max(0, ~~decimalLength));
-
-        return (
-            currencySign +
-            (
-                decimalDelimiter ? num.replace('.', decimalDelimiter) : num).replace(
-                new RegExp(result, 'g'),
-                '$&' + chunkDelimiter
-            ) 
-        );
+        if(typeof value === 'string')
+        {
+            value = +value.replace(/[^0-9]/g, '');
+        }
+        value = value.toFixed(Math.max(0, ~~0));
+        const regexResult = value.replace('.', ',').replace(new RegExp('\\d(?=(\\d{3})+$)', 'g'),'$&' + '.');
+        return regexResult;
     }
 }
 
