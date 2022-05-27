@@ -4,23 +4,20 @@
     </header>
     <form class="FormCurrency">
         <div class="DivFormCurrency">
-            <!-- <input type="number" id="inputValue1" name="stringNum1" placeholder="Input form 1" [(ngModel)]="_numberNum1" value="{{_numberNum1 | customcurrency}}"> -->
-            <!-- <label for=" nameName ">{{_numberNum | customcurrency}}</label> -->
-            <!-- <input type="text" name="_numberNum1" [value]="_numberNum1 | customcurrency" [(ngModel)]="_numberNum1" /> -->
-            <input type="text" id="stringNum1" name="stringNum1" placeholder="Rp. xxx"
-            [ngModel]="_stringNum1 | customcurrency" (ngModelChange)="_stringNum1 = $event"
-            oninput="this.value = this.value.replace(/[^0-9.]/g,'')">
+            <input type="text" id="stringNum1" name="stringNum1"
+                [ngModel]="_stringNum1 | customcurrency" (ngModelChange)="_stringNum1 = $event"
+                oninput="this.value = this.value.replace(_stringRegexNumberRange)">
         </div>
         <div class="DivFormCurrency">
-            <input type="text" id="stringNum2" name="stringNum2" placeholder="Rp. xxx"
-            [ngModel]="_stringNum2 | customcurrency" (ngModelChange)="_stringNum2 = $event"
-            oninput="this.value = this.value.replace(/[^0-9.]/g,'')">
+            <input type="text" id="stringNum2" name="stringNum2"
+                [ngModel]="_stringNum2 | customcurrency" (ngModelChange)="_stringNum2 = $event"
+                oninput="this.value = this.value.replace(_stringRegexNumberRange)">
         </div>
         <div class="DivFormCurrency">
             <input type="button" id="buttonCalculate " value="Calculate" (click)="onCalculate()">
         </div>
         <div class="DivFormCurrency">
-            <label for="nameName">{{_numberResult | customcurrency}}</label>
+            <label for="numberResult">{{_numberResult | customcurrency}}</label>
         </div>
     </form>
 </section>

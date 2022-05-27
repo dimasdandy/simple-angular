@@ -1,15 +1,78 @@
-<section class="SectionListUser">
+<section class="SectionDataListUser">
     <header>
-        <label>List User</label>
+        <h3>Permohonan</h3>
+        <span>Asuransi</span>
     </header>
-    <table>
-        <tr>
-            <th>Full Name</th>
-            <th>Email</th>
-        </tr>
-        <tr *ngFor=" let data of _arrayDataUser">
-            <td>{{data.first_name}} {{data.last_name}}</td>
-            <td>{{data.email}}</td>
-        </tr>
-    </table>
+    <section class="SectionParentDataListUser">
+        <section id="sectionSearchDataListUser">
+            <form>
+                <fieldset>
+                    <legend></legend>
+                    <h2>Pencarian</h2>
+                    <label>Jenis Produk</label>
+                    <div id="divParentRadioButtonJenisProduk">
+                        <div id="divRadioButtonProduk">
+                            <input type="radio" id="age1" name="age" value="30">
+                            <label for="age1">0-30</label>
+                        </div>
+                        <div id="divRadioButtonProduk">
+                            <input type="radio" id="age1" name="age" value="30">
+                            <label for="age1">0-30</label>
+                        </div>
+                    </div>
+                    <div id="divSelectTipeStatus">
+                        <label>Tipe</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo"> Volvo</option>
+                            <option value="saab"> Saab</option>
+                        </select>
+                    </div>
+                    <div id="divDate">
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday">
+                    </div>
+                    <div id="divSelectTipeStatus">
+                        <label>Status</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo"> Volvo</option>v
+                            <option value="saab"> Saab</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+            <div id="divButtonTambahData">
+                <input type="button" id="buttonTambahData" name="buttonTambahData" value="Tambah Data" routerLink="/form">
+            </div>
+        </section>
+        <section id="sectionTableDataListUser">
+            <div id="divHeaderTableDataListUser">
+                <div id="divHeaderTableLeftSide">
+                    <input type="button" id="buttonFirstPage">
+                    <input type="button" id="buttonPreviousPage">
+                    <label>Tidak ada halaman</label>
+                    <input type="button" id="buttonNextPage">
+                    <input type="button" id="buttonLastPage">
+                </div>
+                <div id="divHeaderTableRightSide">
+                    <label>Baris per halaman</label>
+                    <select name="cars" id="cars">
+                        <option value="volvo">20 </option>
+                        <option value="saab">40 </option>
+                    </select>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr *ngFor=" let data of _arrayDataUser">
+                    <td>{{data.id}}</td>
+                    <td>{{data.first_name}} {{data.last_name}}</td>
+                    <td>{{data.email}}</td>
+                </tr>
+            </table>
+        </section>
+    </section>
 </section>

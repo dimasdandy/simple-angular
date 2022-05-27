@@ -26,25 +26,29 @@ import { BaseService } from './bases/base.service';
 export class TokenService extends BaseService
 {
 
-  //#region CONSTRUCTOR
+    //#region CONSTRUCTOR
 
-  constructor(http: HttpClient)
-  {
-    super(http);
-  }
+    constructor(http: HttpClient)
+    {
+        super(http);
+    }
 
-  //#endregion
+    //#endregion
 
 
-  postGenerateTokenDummy(interfaceGeneralService: GeneralServiceInterface): void
-  {
-    return this.callServicePost(interfaceGeneralService, WebAdressConstant.STRING_URL_POST_GENERATE_TOKEN_DUMMY, JSON.stringify(""));
-  }
+    //#region METHODSERVICE
 
-  postVerifyTokenDummy(interfaceGeneralService: GeneralServiceInterface, modelVerifyToken?: string): void
-  {
-    return this.callServicePost(interfaceGeneralService, WebAdressConstant.STRING_URL_POST_VERIFY_TOKEN_DUMMY, JSON.stringify(modelVerifyToken));
-  }
+    postGenerateTokenDummy(interfaceGeneralService: GeneralServiceInterface): void
+    {
+        return this.callServicePost(interfaceGeneralService, WebAdressConstant.STRING_URL_POST_GENERATE_TOKEN_DUMMY, JSON.stringify(""));
+    }
+
+    postVerifyTokenDummy(interfaceGeneralService: GeneralServiceInterface, modelVerifyToken?: string): void
+    {
+        return this.callServicePost(interfaceGeneralService, WebAdressConstant.STRING_URL_POST_VERIFY_TOKEN_DUMMY, JSON.stringify(modelVerifyToken));
+    }
+
+    //#endregion
 
 }
 

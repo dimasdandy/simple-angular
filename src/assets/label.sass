@@ -1,3 +1,12 @@
+@import initialization
+
+header.HeaderNavBar
+    ul
+        li
+            a
+                text-decoration: none
+                color: rgb(224, 168, 96)
+
 section.SectionSignIn
     label
         height: auto
@@ -7,7 +16,7 @@ section.SectionSignIn
         margin-top: 25px
         margin-bottom: 30px
         font-size: $font-size-5em
-        font-size: 4em !important
+        font-size: $font-size-4em !important
         font-weight: 500
         letter-spacing: 10px !important
         color: rgb(224, 168, 96)
@@ -18,7 +27,7 @@ section.SectionFormCreateUser, section.SectionCurrency, section.SectionToken
         label
             height: auto
             font-size: $font-size-5em
-            font-size: 4em !important
+            font-size: $font-size-4em !important
             font-weight: 500
             letter-spacing: 10px !important
             margin-bottom: 50px !important
@@ -29,7 +38,7 @@ section.SectionListUser
     header
         label
             font-size: $font-size-5em
-            font-size: 4em !important
+            font-size: $font-size-4em !important
             letter-spacing: 10px !important
             margin-bottom: 30px !important
             text-align: center
@@ -38,14 +47,14 @@ section.SectionListUser
 
 div.DivSignIn
     label
-        font-size: 1.175em
+        font-size: $font-size-1-175em
         color: #787878
         margin-bottom: 10px
 
 div.DivFormCreateUser
     label
         width: 40px
-        font-size: 1.175em
+        font-size: $font-size-1-175em
         color: #787878
         margin-bottom: 10px
         margin-right: 20px
@@ -53,13 +62,13 @@ div.DivFormCreateUser
 div.DivFormCurrency
     label
         width: auto
-        font-size: 1.175em
+        font-size: $font-size-1-175em
         color: #787878
 
 form.FormSignIn, form.FormCreateUser, form.FormCurrency, form.FormToken
     h3
         color: #f26f21
-        font-size: 1.5em
+        font-size: $font-size-1-5em
         font-weight: bold
         margin-bottom: 10px
 

@@ -12,9 +12,9 @@ import { ResponseModel } from 'src/app/models/response.model';
 
 @Injectable
 (
-  {
-    providedIn: 'root'
-  }
+    {
+        providedIn: 'root'
+    }
 )
 
 //#endregion
@@ -24,116 +24,123 @@ import { ResponseModel } from 'src/app/models/response.model';
 
 export class BaseService
 {
-  //#region VARIABLE
+    //#region VARIABLE
 
-  _headerHttp: HttpHeaders = new HttpHeaders();
+    _headerHttp: HttpHeaders = new HttpHeaders();
 
-  //#endregion
-
-
-  //#region CONSTRUCTOR
-
-  constructor(private http: HttpClient)
-  {
-
-  }
-
-  //#endregion
+    //#endregion
 
 
-  //#region METHOD
+    //#region CONSTRUCTOR
 
-  protected callServiceGet(interfaceGeneralService: GeneralServiceInterface, stringUrl: string): void
-  {
-    try
+    constructor(private http: HttpClient)
     {
-      this.http.get<HttpResponse<any>>(stringUrl,
-          {
-            headers:
-            this._headerHttp
-            .append('Accept', 'application/json')
-            .append('Content-Type', 'application/json'),
-            observe:'response'
-          }
-        )
-        .subscribe
-        (
-          modelHttpResponse =>
-          {
-            const modelResponse: ResponseModel = new ResponseModel();
-            if (modelHttpResponse.body != null)
-            {
-              modelResponse.MessageTitle = modelHttpResponse.statusText;
-              modelResponse.HTTPResponseCode = modelHttpResponse.status.toString();
-              modelResponse.Data = JSON.stringify(modelHttpResponse.body);
-              interfaceGeneralService.success(modelResponse);
-            }
-            else
-            {
-              interfaceGeneralService.signout;
-            }
-          },
-          (error: {error: any; message: string;}) => {
-            const modelResponse: ResponseModel = new ResponseModel();
-            modelResponse.MessageTitle = error.message;
-            modelResponse.HTTPResponseCode = error.error;
-            modelResponse.Data = JSON.stringify(error.error);
-            interfaceGeneralService.fail(modelResponse);
-          }
-        )
-    }
-    catch (error)
-    {
-      alert("Whoopsss something bad happens!");
-    }
-  }
 
-  protected callServicePost(interfaceGeneralService: GeneralServiceInterface, stringUrl: string, stringData: string): void
-  {
-    try
-    {
-      this.http.post<HttpResponse<any>>(stringUrl, stringData,
-          {
-            headers:
-            this._headerHttp
-            .append('Accept', 'application/json')
-            .append('Content-Type', 'application/json'),
-            observe:'response'
-          }
-        )
-        .subscribe
-        (
-          modelHttpResponse =>
-          {
-            const modelResponse: ResponseModel = new ResponseModel();
-            if (modelHttpResponse.body != null)
-            {
-              modelResponse.MessageTitle = modelHttpResponse.statusText;
-              modelResponse.HTTPResponseCode = modelHttpResponse.status.toString();
-              modelResponse.Data = JSON.stringify(modelHttpResponse.body);
-              interfaceGeneralService.success(modelResponse);
-            }
-            else
-            {
-              interfaceGeneralService.signout;
-            }
-          },
-          error => {
-            const modelResponse: ResponseModel = new ResponseModel();
-            modelResponse.MessageTitle = error.statusText;
-            modelResponse.HTTPResponseCode = error.status.toString;
-            modelResponse.Data = JSON.stringify(error.body);
-            interfaceGeneralService.fail(modelResponse);
-          }
-        )
     }
-    catch (error)
-    {
-      alert("Whoopsss something bad happens!");
-    }
-  }
 
-  //#endregion
+    //#endregion
+
+
+    //#region METHOD
+
+    protected callServiceGet(interfaceGeneralService: GeneralServiceInterface, stringUrl: string): void
+    {
+        try
+        {
+            this.http.get<HttpResponse<any>>
+            (
+                stringUrl,
+                {
+                    headers:
+                    this._headerHttp
+                    .append('Accept', 'application/json')
+                    .append('Content-Type', 'application/json'),
+                    observe:'response'
+                }
+            )
+            .subscribe
+            (
+                modelHttpResponse =>
+                {
+                    const modelResponse: ResponseModel = new ResponseModel();
+                    if (modelHttpResponse.body != null)
+                    {
+                        modelResponse.MessageTitle = modelHttpResponse.statusText;
+                        modelResponse.HTTPResponseCode = modelHttpResponse.status.toString();
+                        modelResponse.Data = JSON.stringify(modelHttpResponse.body);
+                        interfaceGeneralService.success(modelResponse);
+                    }
+                    else
+                    {
+                        interfaceGeneralService.signout;
+                    }
+                },
+                error =>
+                {
+                    const modelResponse: ResponseModel = new ResponseModel();
+                    modelResponse.MessageTitle = error.statusText;
+                    modelResponse.HTTPResponseCode = error.status.toString;
+                    modelResponse.Data = JSON.stringify(error.body);
+                    interfaceGeneralService.fail(modelResponse);
+                }
+            )
+        }
+        catch (error)
+        {
+            alert("Whoopsss something bad happens!");
+        }
+    }
+
+    protected callServicePost(interfaceGeneralService: GeneralServiceInterface, stringUrl: string, stringData: string): void
+    {
+        try
+        {
+            this.http.post<HttpResponse<any>>
+            (
+                stringUrl, stringData,
+                {
+                    headers:
+                    this._headerHttp
+                    .append('Accept', 'application/json')
+                    .append('Content-Type', 'application/json'),
+                    observe:'response'
+                }
+            )
+            .subscribe
+            (
+                modelHttpResponse =>
+                {
+                    const modelResponse: ResponseModel = new ResponseModel();
+                    if (modelHttpResponse.body != null)
+                    {
+                        modelResponse.MessageTitle = modelHttpResponse.statusText;
+                        modelResponse.HTTPResponseCode = modelHttpResponse.status.toString();
+                        modelResponse.Data = JSON.stringify(modelHttpResponse.body);
+                        interfaceGeneralService.success(modelResponse);
+                    }
+                    else
+                    {
+                        interfaceGeneralService.signout;
+                    }
+                },
+                error =>
+                {
+                    const modelResponse: ResponseModel = new ResponseModel();
+                    modelResponse.MessageTitle = error.statusText;
+                    modelResponse.HTTPResponseCode = error.status.toString;
+                    modelResponse.Data = JSON.stringify(error.body);
+                    interfaceGeneralService.fail(modelResponse);
+                }
+            )
+        }
+        catch (error)
+        {
+            alert("Whoopsss something bad happens!");
+        }
+    }
+
+    //#endregion
+
 }
 
 //#endregion

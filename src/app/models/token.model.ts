@@ -2,7 +2,7 @@
 
 export class TokenModel
 {
-    token?: string;
+    Token?: string;
 }
 
-//#endregion
+//#endregionss

@@ -16,51 +16,57 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { FormComponent } from './components/form/form.component';
 import { TokenComponent } from './components/token/token.component';
 import { LoadingcircleComponent } from './components/loadingcircle/loadingcircle.component';
+import { EmailComponent } from './components/email/email.component';
 
 //#endregion
 
 
 //#region MODULE
 
-@NgModule(
-  {
-  declarations:
-  [
-    AppComponent,
-    SigninComponent,
-    HomeComponent,
-    ListuserComponent,
-    CurrencyComponent,
-    FormComponent,
-    TokenComponent,
-    LoadingcircleComponent
-  ],
-  imports:
-  [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatButtonModule,
-    CustompipeModule,
-    HttpClientModule
-  ],
-  providers:
-  [
+@NgModule
+(
+    {
+        declarations:
+        [
+            AppComponent,
+            SigninComponent,
+            HomeComponent,
+            ListuserComponent,
+            CurrencyComponent,
+            FormComponent,
+            TokenComponent,
+            LoadingcircleComponent,
+            EmailComponent
+        ],
+        imports:
+        [
+            BrowserModule,
+            AppRoutingModule,
+            BrowserAnimationsModule,
+            FormsModule,
+            MatButtonModule,
+            CustompipeModule,
+            HttpClientModule
+        ],
+        providers:
+        [
 
-  ],
-  bootstrap:
-  [
-    AppComponent
-  ]
-}
+        ],
+        bootstrap:
+        [
+            AppComponent
+        ]
+    }
 )
 
 //#endregion
 
 
-//#region EXPORT
+//#region CLASS
 
-export class AppModule { }
+export class AppModule
+{
+
+}
 
 //#endregion

@@ -1,6 +1,8 @@
 //#region IMPORT
 
 import { Component, OnInit } from '@angular/core';
+import { RegexConstant } from 'src/app/constants/regex.constant';
+import { WebAdressConstant } from 'src/app/constants/webaddress.constant';
 
 //#endregion
 
@@ -25,9 +27,10 @@ export class CurrencyComponent implements OnInit {
 
 	//#region VARIABLE
 
-	public _stringNum1: string = "0";
-	public _stringNum2: string = "0";
-	public _numberResult: number = 0;
+	public _stringNum1: string;
+	public _stringNum2: string;
+	public _stringRegexNumberRange: string;
+	public _numberResult: number;
 
 	//#endregion
 
@@ -36,7 +39,10 @@ export class CurrencyComponent implements OnInit {
 
 	constructor()
 	{
-
+		this._stringNum1 = "0";
+		this._stringNum2 = "0";
+		this._stringRegexNumberRange = RegexConstant.STRING_REGULAREXPRESSION_NUMBER_RANGE
+		this._numberResult = 0;
 	}
 
 	//#endregion
@@ -52,26 +58,6 @@ export class CurrencyComponent implements OnInit {
 	//#endregion
 
 
-	//#region ONCURRENCYPIPE
-
-	// onCurrencyPipe(data?: string): void
-	// {
-	// 	// this._numberResult = (+this._stringNum1) * (+this._stringNum2);
-
-	// 	if(data)
-    //     {
-    //         const num = +data.replace(/[^0-9]/g, '');
-    //         let result = '\\d(?=(\\d{3})+$)';
-    //         data = num.toFixed(Math.max(0, ~~0));
-    //         const rupiah = data.replace('.', ',').replace(new RegExp(result, 'g'),'$&' + '.');
-    //         this._stringNum1 = rupiah;
-	// 		this._stringNum2 = rupiah;
-    //     }
-	// }
-
-	//#endregion
-
-
 	//#region ONCALCULATE
 
 	onCalculate(): number
@@ -79,6 +65,9 @@ export class CurrencyComponent implements OnInit {
 		this._numberResult = +this._stringNum1.replace(/[^0-9]/g, '') * +this._stringNum2.replace(/[^0-9]/g, '');
 		return this._numberResult;
 	}
+
+	//#endregion
+
 }
 
 //#endregion

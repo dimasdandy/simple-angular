@@ -1,6 +1,7 @@
 //#region CLASS
 
-export class BaseModel {
+export class BaseModel
+{
     ID?: string;
     CreatedOn?: string;
     CreatedBy?: string;

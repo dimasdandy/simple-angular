@@ -7,20 +7,23 @@ import { Component } from '@angular/core';
 
 //#region  COMPONENT
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
-})
+@Component
+(
+	{
+		selector: 'app-root',
+		templateUrl: './app.component.html',
+		styleUrls: ['./app.component.sass']
+	}
+)
 
 //#endregion
 
 
-//#region EXPORT
+//#region CLASS
 
 export class AppComponent
 {
-  title = 'Latihan-Website';
+	title = 'Latihan-Website';
 }
 
 //#endregion

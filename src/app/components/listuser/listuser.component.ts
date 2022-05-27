@@ -13,11 +13,11 @@ import { UserService } from 'src/app/services/user.service';
 
 @Component
 (
-  {
-    selector: 'app-listuser',
-    templateUrl: './listuser.component.html',
-    styleUrls: ['./listuser.component.sass']
-  }
+	{
+		selector: 'app-listuser',
+		templateUrl: './listuser.component.html',
+		styleUrls: ['./listuser.component.sass']
+	}
 )
 
 //#endregion
@@ -40,41 +40,40 @@ export class ListuserComponent implements OnInit
 
   //#region CALLAPILISTUSER
 
-  callListUser(componentCurrent: ListuserComponent): void
-  {
-    this._serviceUser.getListDataUser
-        (
-          {
-            success(modelResponse: ResponseModel): void
-            {
-                if(modelResponse.HTTPResponseCode === "200")
-                {
-                    if(modelResponse.Data !== undefined)
-                    {
-                      // alert(JSON.stringify(modelResponse.Data));
-                      componentCurrent._modelListUser = JSON.parse(modelResponse.Data);
-                      componentCurrent._arrayDataUser = componentCurrent._modelListUser?.data
-                    }
-                }
+	callListUser(componentCurrent: ListuserComponent): void
+	{
+		this._serviceUser.getListDataUser
+		(
+			{
+				success(modelResponse: ResponseModel): void
+				{
+					if(modelResponse.HTTPResponseCode === "200")
+					{
+						if(modelResponse.Data !== undefined)
+						{
+							componentCurrent._modelListUser = JSON.parse(modelResponse.Data);
+							componentCurrent._arrayDataUser = componentCurrent._modelListUser?.data;
+						}
+					}
 
-            },
-            fail(modelResponse: ResponseModel): void
-            {
-                if(modelResponse.HTTPResponseCode == "400" || modelResponse.HTTPResponseCode == "401")
-                {
-                  alert();
-                }
-            },
-            signout(modelResponse: ResponseModel): void
-            {
-                if(modelResponse.HTTPResponseCode === "400" || modelResponse.HTTPResponseCode === "401")
-                {
-                  alert()
-                }
-            }
-          }
-        )
-  }
+				},
+				fail(modelResponse: ResponseModel): void
+				{
+					if(modelResponse.HTTPResponseCode == "400" || modelResponse.HTTPResponseCode == "401")
+					{
+						alert(modelResponse.MessageTitle);
+					}
+				},
+				signout(modelResponse: ResponseModel): void
+				{
+					if(modelResponse.HTTPResponseCode === "400" || modelResponse.HTTPResponseCode === "401")
+					{
+						alert(modelResponse.MessageTitle);
+					}
+				}
+			}
+		)
+  	}
 
   //#endregion
 

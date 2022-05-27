@@ -10,11 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component
 (
-  {
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.sass']
-  }
+    {
+        selector: 'app-home',
+        templateUrl: './home.component.html',
+        styleUrls: ['./home.component.sass']
+    }
 )
 
 //#endregion
@@ -24,54 +24,42 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-  _username = this.activeRoute.snapshot.params['username'];
-  _numberNum: number = 0;
-  _arrayHeaders =
-  [
-    "First Name",
-    "Last Name",
-    "isOnline"
-  ]
-  _arrayListValue =
-  [
+    //#region VARIABLE
+
+    _username = this.activeRoute.snapshot.params['username'];
+    _numberNum: number = 0;
+
+    //#endregion
+
+
+    //#region CONSTRUCTOR
+
+    constructor(private route: Router, private activeRoute: ActivatedRoute)
     {
-      "first_name": "Sammy",
-      "last_name": "Shark",
-      "isOnline": true
-    },
-    {
-      "first_name": "Sammy",
-      "last_name": "Shark",
-      "isOnline": true
+
     }
-  ]
 
-  //#region CONSTRUCTOR
-
-  constructor(private route: Router, private activeRoute: ActivatedRoute) { }
-
-  //#endregion
+    //#endregion
 
 
-  //#region ONROUTE
+    //#region ONROUTE
 
-  onRoute(): void
-  {
-    // this.route.navigateByUrl("/signin");
-    this.route.navigate(['/signin'])
-  }
+    onRoute(): void
+    {
+        this.route.navigate(['/signin'])
+    }
 
-  //#endregion
+    //#endregion
 
 
-  //#region INIT
+    //#region INIT
 
-  ngOnInit(): void
-  {
+    ngOnInit(): void
+    {
 
-  }
+    }
 
-  //#endregion
+    //#endregion
 
 }
 

@@ -20,10 +20,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CustomepipePipe implements PipeTransform {
 
-  transform(value: number)
-  {
-    return value*2;
-  }
+    //#region TRANSFORM
+
+    transform(value: number)
+    {
+        return value*2;
+    }
+
+    //#endregion
 
 }
 

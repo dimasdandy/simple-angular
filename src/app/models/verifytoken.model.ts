@@ -2,7 +2,7 @@
 
 export class VerifyTokenModel
 {
-    token?: string;
+    Token?: string;
 }
 
 //#endregion

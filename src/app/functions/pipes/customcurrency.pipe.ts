@@ -21,6 +21,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CustomcurrencyPipe implements PipeTransform {
 
+    //#region TRANSFORM
+
     transform
     (
         value: any,
@@ -34,8 +36,10 @@ export class CustomcurrencyPipe implements PipeTransform {
         value = value.toFixed(Math.max(0, ~~0));
         const regexResult = value.replace('.', ',').replace(new RegExp('\\d(?=(\\d{3})+$)', 'g'),'$&' + '.');
         return regexResult;
-        //cmd
     }
+
+    //#endregion
+    
 }
 
 //#endregion

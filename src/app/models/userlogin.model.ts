@@ -1,6 +1,8 @@
 //#region IMPORT
 
+import { ENUM_RESPONSE_STATE } from "../constants/enum.constant";
 import { RegexConstant } from "../constants/regex.constant";
+import { BaseModel } from "./bases/base.model";
 import { ResponseModel } from "./response.model"
 
 //#endregion
@@ -8,7 +10,7 @@ import { ResponseModel } from "./response.model"
 
 //#region CLASS
 
-export class UserLoginModel
+export class UserLoginModel extends BaseModel
 {
     email?: string
     password?: string
@@ -32,7 +34,7 @@ export class UserLoginModel
         else if (regularExpression.test(this.email))
         {
             modelResponse.MessageContent = "Login Success";
-            modelResponse.State = "Success";
+            modelResponse.State = ENUM_RESPONSE_STATE.Success;
         }
         else
         {

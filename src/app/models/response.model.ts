@@ -1,11 +1,6 @@
-//#region IMPORT
-
-import { TokenModel } from "./token.model";
-
-//#endregion
-
-
 //#region CLASS
+
+import { ENUM_RESPONSE_STATE } from "../constants/enum.constant";
 
 export class ResponseModel
 {
@@ -15,7 +10,7 @@ export class ResponseModel
     MessageTitle?: string;
     MessageContent?: string;
     Data?: string;
-    State?: string;
+    State?: ENUM_RESPONSE_STATE;
 }
 
 //#endregion

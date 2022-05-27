@@ -1,6 +1,6 @@
 //#region IMPORT
 
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ResponseModel } from 'src/app/models/response.model';
 import { TokenModel } from 'src/app/models/token.model';
@@ -27,21 +27,21 @@ import { UserService } from 'src/app/services/user.service';
 //#region CLASS
 
 export class SigninComponent implements OnInit {
+
     //#region VARIABLE
 
     public _modelUserLogin: UserLoginModel = new UserLoginModel();
     public _modelToken: TokenModel = new TokenModel();
     public _booleanIsLoading: boolean = false;
-    private _elementHTMLImgLoadingCircle: HTMLElement | null;
 
     //#endregion
 
 
     //#region CONSTRUCTOR
 
-    constructor(private route: Router, private _userService: UserService, private changeDetectorRef: ChangeDetectorRef)
+    constructor(private route: Router, private _userService: UserService)
     {
-        this._elementHTMLImgLoadingCircle = document.getElementById("imageLoadingCircle");
+
     }
 
     //#endregion
@@ -59,7 +59,8 @@ export class SigninComponent implements OnInit {
 
     //#region ONCLICK
 
-    onClick(componentCurrent: SigninComponent): void {
+    onClick(componentCurrent: SigninComponent): void
+    {
         const modelUserLogin: UserLoginModel = new UserLoginModel();
         modelUserLogin.email = this._modelUserLogin.email;
         modelUserLogin.password = this._modelUserLogin.password;

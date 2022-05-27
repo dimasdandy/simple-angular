@@ -3,6 +3,7 @@
 @import link
 @import animation
 @import image
+@import screen
 
 @mixin card-shadow()
     box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px rgb(0 0 0 / 10%)
@@ -16,10 +17,14 @@ body
     height: 100vh
     background-image: url("https://static.vecteezy.com/system/resources/previews/001/907/544/non_2x/flat-design-background-with-abstract-pattern-free-vector.jpg")
     background-repeat: no-repeat
+    background-size: cover
 
 form
     @include card-shadow()
     background-color: #FFF
+
+fieldset
+    border: 0 none
 
 header.HeaderNavBar
     position: relative
@@ -36,9 +41,6 @@ header.HeaderNavBar
             background-color: #FFF
             text-align: center
             border-radius: 20px
-            a
-                text-decoration: none
-                color: rgb(224, 168, 96)
 
 section.SectionSignIn
     width: auto
@@ -85,7 +87,7 @@ section.SectionListUser
         overflow-x: auto
         overflow-y: scroll
         position: relative
-        animation: animationZoom 1s 
+        animation: animationZoom 1s
         tr
             margin-bottom: 50px
             &:hover
@@ -97,6 +99,172 @@ section.SectionListUser
                 text-align: left
                 background-color: rgb(224, 168, 96)
                 color: white
+
+section.SectionDataListUser
+    margin: auto
+    height: 100vh
+    width: 97%
+    header
+        margin-bottom: 20px
+        h3
+            margin: 0
+            padding-top: 20px
+            font-size: 1.5em
+            font-weight: 600
+            color: #324d57
+        span
+            display: block
+            font-weight: 500
+            color: #37495f
+
+section.SectionParentDataListUser
+        display: flex
+        width: 100%
+        justify-content: space-between
+        section#sectionSearchDataListUser
+            display: flex
+            flex-direction: column
+            width: 25%
+            form
+                display: flex
+                flex-direction: column
+                width: 350px
+                height: auto
+                background-color: #FFF
+                border-radius: 15px
+                fieldset
+                    display: flex
+                    flex-direction: column
+                    padding: 10px
+                    h2
+                        margin-bottom: 10px
+                        color: #f2752c
+                    label
+                        margin-bottom: 5px
+                        font-size: 1em
+                        color: #6e6b6b
+                    div#divParentRadioButtonJenisProduk
+                        display: flex
+                        margin-bottom: 10px
+                        div#divRadioButtonProduk
+                            display: flex
+                            align-items: flex-end
+                            margin-right: 10px
+                            input[type=radio]
+                                width: 1.5em
+                                height: 1.5em
+                                margin-right: 5px
+                            label
+                                color: #6e6b6b
+                                margin-bottom: 0px
+                    div#divSelectTipeStatus
+                        display: flex
+                        flex-direction: column
+                        margin-bottom: 10px
+                        label
+                            color: #6e6b6b
+                            margin-bottom: 5px
+                        select
+                            border-radius: 5px
+                            color: #6e6b6b
+                            height: 30px
+                            background-color: #e6e6e6
+                            border: none
+                            padding: 5px
+                    div#divDate
+                        display: flex
+                        flex-direction: column
+                        margin-bottom: 10px
+                        input[type=date]
+                            color: #6e6b6b
+                            height: 40px
+                            border-radius: 5px
+                            border-width: thin
+                            background-color: #e6e6e6
+                            border: none
+                            padding: 5px
+                        label
+                            color: #6e6b6b
+                            margin-bottom: 5px
+            div#divButtonTambahData
+                width: 350px
+                input[type=button]
+                    height: 40px
+                    width: 350px
+                    margin-top: 15px
+                    border-radius: 15px
+                    background-color: #f27830
+                    color: #FFF
+                    border: none
+                    font-weight: 600
+                    font-size: 1.2em
+        section#sectionTableDataListUser
+            width: 73%
+            div#divHeaderTableDataListUser
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                div#divHeaderTableLeftSide
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    align-items: center
+                    margin-bottom: 20px
+                    height: 30px
+                    input[type=button]
+                        height: 30px
+                        width: 30px
+                        margin-right: 5px
+                        border-radius: 5px
+                        border: none
+                        background-color: #f48321
+                        background-repeat: no-repeat
+                    input[type=button]#buttonFirstPage
+                        background-image: url('~src/assets/icons/icon_first.svg')
+                    input[type=button]#buttonLastPage
+                        background-image: url('~src/assets/icons/icon_last.svg')
+                    input[type=button]#buttonPreviousPage
+                        background-image: url('~src/assets/icons/icon_prev.svg')
+                    input[type=button]#buttonNextPage
+                        background-image: url('~src/assets/icons/icon_next.svg')
+                    label
+                        margin-right: 10px
+                        margin-left: 5px
+                        color: #FFF
+                div#divHeaderTableRightSide
+                    display: flex
+                    label
+                        color: #fff
+                    select
+                        width: 50px
+                        height: 25px
+                        margin-left: 15px
+                        padding-left: 5px
+                        border: none
+                        border-radius: 5px
+            table
+                height: auto
+                width: 100%
+                border-collapse: collapse
+                border-radius: 10px
+                background-color: #FFF
+                tr
+                    &:hover
+                        background-color: #ddd
+                    &:nth-child(odd)
+                        background-color: #f2f2f2
+                    th
+                        padding-top: 12px
+                        padding-bottom: 12px
+                        text-align: left
+                        background-color: #331763
+                        color: white
+                    td:first-child, th:first-child
+                        border-radius: 10px 0 0 10px
+                        padding: 8px
+                    td:last-child, th:last-child
+                        border-radius: 0 10px 10px 0
+                        padding: 8px
 
 section#sectionLoadingMessage, img#imageLoadingCircle
     display: flex

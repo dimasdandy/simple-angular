@@ -12,29 +12,32 @@ import { CustomcurrencyPipe } from './customcurrency.pipe';
 
 @NgModule
 (
-  {
-  declarations:
-  [
-    CustomepipePipe,
-    CustomcurrencyPipe
-  ],
-  imports:
-  [
-    CommonModule
-  ],
-  exports:
-  [
-    CustomepipePipe,
-    CustomcurrencyPipe
-  ]
-  }
+	{
+		declarations:
+		[
+			CustomepipePipe,
+			CustomcurrencyPipe
+		],
+		imports:
+		[
+			CommonModule
+		],
+		exports:
+		[
+			CustomepipePipe,
+			CustomcurrencyPipe
+		]
+	}
 )
 
 //#endregion
 
 
-//#region EXPORT
+//#region CLASS
 
-export class CustompipeModule { }
+export class CustompipeModule
+{
+
+}
 
 //#endregion
