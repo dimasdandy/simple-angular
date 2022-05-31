@@ -1,17 +1,22 @@
-<header class="HeaderNavBar">
-    <ul style="display: flex; justify-content: space-around; list-style-type: none; padding: 20px;">
-        <li><a routerLink="/listuser">List User</a></li>
-        <li><a routerLink="/form">Form</a></li>
-        <li><a routerLink="/token">Service Token</a></li>
-        <li><a routerLink="/currency">Currency</a></li>
-        <li><a routerLink="/email">Email</a></li>
-        <li><a routerLink="/signin">Sign Out</a></li>
-    </ul>
-</header>
-<section>
-    <svg>
-        <text x="37%" y="70%">
-            WELCOME
-        </text>
-    </svg>
+<section style="display: flex; margin: auto;
+height: 100vh;
+width: 97%;">
+    <header class="HeaderNavBar">
+        <input type="button" id="buttonNavigation" name="buttonNavigation" (click)="_booleanNavigation = !_booleanNavigation">
+        <ul [ngClass]="_booleanNavigation ? 'ulShow':'ulHide' ">
+            <li><a routerLink="/listuser">List User</a></li>
+            <li><a routerLink="/form">Form</a></li>
+            <li><a routerLink="/token">Service Token</a></li>
+            <li><a routerLink="/currency">Currency</a></li>
+            <li><a routerLink="/email">Email</a></li>
+            <li><a routerLink="/signin">Sign Out</a></li>
+        </ul>
+    </header>
+    <section style="width: 85%;">
+        <svg>
+            <text x="20%" y="50%">
+                WELCOME
+            </text>
+        </svg>
+    </section>
 </section>

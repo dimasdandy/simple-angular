@@ -1,4 +1,11 @@
+@import animation
+
 @media screen and (max-width: 1380px)
+    *
+        transform-style: preserve-3d
+        transform: rotateY(0) translate(0) translateZ(0) scale(1)
+        transition: .5s ease
+        transition-property: all
     section.SectionParentDataListUser
         display: flex
         flex-direction: column
@@ -7,6 +14,9 @@
             width: 100% !important
             form
                 width: 100% !important
+                div#divSelectTipeStatus
+                    select
+                        background-position: 99% center !important
             div#divButtonTambahData
                 width: 100% !important
                 input[type=button]

@@ -12,12 +12,12 @@
                     <label>Jenis Produk</label>
                     <div id="divParentRadioButtonJenisProduk">
                         <div id="divRadioButtonProduk">
-                            <input type="radio" id="age1" name="age" value="30">
-                            <label for="age1">0-30</label>
+                            <input type="radio" id="radioRumahku" name="radioJenisProduk">
+                            <label for="radioRumahku">Rumahku</label>
                         </div>
                         <div id="divRadioButtonProduk">
-                            <input type="radio" id="age1" name="age" value="30">
-                            <label for="age1">0-30</label>
+                            <input type="radio" id="radioKtu" name="radioJenisProduk">
+                            <label for="radioKtu">KTU</label>
                         </div>
                     </div>
                     <div id="divSelectTipeStatus">
@@ -28,8 +28,8 @@
                         </select>
                     </div>
                     <div id="divDate">
-                        <label for="birthday">Birthday:</label>
-                        <input type="date" id="birthday" name="birthday">
+                        <label for="datePermohonan">Tanggal Permohonan</label>
+                        <input type="date" id="datePermohonan" name="datePermohonan">
                     </div>
                     <div id="divSelectTipeStatus">
                         <label>Status</label>
@@ -48,16 +48,16 @@
             <div id="divHeaderTableDataListUser">
                 <div id="divHeaderTableLeftSide">
                     <input type="button" id="buttonFirstPage">
-                    <input type="button" id="buttonPreviousPage">
-                    <label>Tidak ada halaman</label>
-                    <input type="button" id="buttonNextPage">
+                    <input type="button" id="buttonPreviousPage" (click)="callPreviousPage()">
+                    <label>{{_numberPage}}</label>
+                    <input type="button" id="buttonNextPage" (click)="callNextPage()">
                     <input type="button" id="buttonLastPage">
                 </div>
                 <div id="divHeaderTableRightSide">
                     <label>Baris per halaman</label>
-                    <select name="cars" id="cars">
-                        <option value="volvo">20 </option>
-                        <option value="saab">40 </option>
+                    <select name="perPage" id="perPage" [(ngModel)]="_numberPerPage" (change)="callChangePerPage()">
+                        <option value="5">5</option>
+                        <option value="20">20</option>
                     </select>
                 </div>
             </div>

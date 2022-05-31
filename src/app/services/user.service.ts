@@ -39,9 +39,9 @@ export class UserService extends BaseService
 
 	//#region METHOD
 
-	getListDataUser(interfaceGeneralService: GeneralServiceInterface): void
+	getListDataUser(interfaceGeneralService: GeneralServiceInterface, page: number, per_page: number): void
 	{
-		return this.callServiceGet(interfaceGeneralService, WebAdressConstant.STRING_URL_GET_LIST_USER);
+		return this.callServiceGetList(interfaceGeneralService, WebAdressConstant.STRING_URL_GET_LIST_USER, page, per_page);
 	}
 
 	postLogin(interfaceGeneralService: GeneralServiceInterface, modelUserLogin: UserLoginModel): void
@@ -55,7 +55,7 @@ export class UserService extends BaseService
 	}
 
 	//#endregion
-	
+
 }
 
 //#endregion

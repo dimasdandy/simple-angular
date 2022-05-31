@@ -2,7 +2,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { RegexConstant } from 'src/app/constants/regex.constant';
-import { WebAdressConstant } from 'src/app/constants/webaddress.constant';
 
 //#endregion
 

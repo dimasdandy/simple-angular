@@ -26,8 +26,9 @@ export class HomeComponent implements OnInit {
 
     //#region VARIABLE
 
-    _username = this.activeRoute.snapshot.params['username'];
-    _numberNum: number = 0;
+   public _username = this.activeRoute.snapshot.params['username'];
+   public _numberNum: number = 0;
+   public _booleanNavigation: boolean = false;
 
     //#endregion
 
